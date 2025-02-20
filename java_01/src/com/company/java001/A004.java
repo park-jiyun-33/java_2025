@@ -7,6 +7,7 @@ public class A004 {
 		System.out.println("3. 클래스 이름 : A004.class / A41.class / A42.class / A43.calss / A43$A44.class");
 	}
 }
+// D:\java_2025\java_01\bin\com\company\java001
 class A41 {}
 class A42 {}
 class A43 {
