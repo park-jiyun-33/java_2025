@@ -32,7 +32,8 @@ public class Bank_3 {
 				System.out.print("*ID : "); temp_id = scanner.next().charAt(0);
 				System.out.print("*PASS : "); temp_pass = scanner.next().charAt(0);
 				if(id == temp_id && pass == temp_pass) {break;}
-				else {System.out.println("비밀번호를 확인해주세요.");}
+				else {System.out.println("비밀번호를 확인해주세요.");
+				} 
 			} // E : 로그인 확인 반복
 			
 			if(num == 2) {
