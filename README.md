@@ -18,3 +18,5 @@
 #### 5. 20250221
 1. 반복문(for)
 2. 무한 반복문(for(;;))
+
+https://youtube.com/shorts/xxwALMTPJys?feature=share
