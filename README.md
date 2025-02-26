@@ -19,4 +19,12 @@
 1. 반복문(for)
 2. 무한 반복문(for(;;))
 
-https://youtube.com/shorts/xxwALMTPJys?feature=share
+#### 6. 20250224
+1. 1차원배열
+
+#### 7. 20250225
+1. 다차원배열
+
+#### 8. 20250226
+1. 메소드
+[BANK](https://youtube.com/shorts/xxwALMTPJys?feature=share)
