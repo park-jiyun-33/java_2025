@@ -27,4 +27,4 @@
 
 #### 8. 20250226
 1. 메소드
-[BANK](https://youtube.com/shorts/xxwALMTPJys?feature=share)
+2. 미니프로젝트 : [BANK](https://youtube.com/shorts/xxwALMTPJys?feature=share)
