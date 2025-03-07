@@ -24,13 +24,28 @@
         <input type="button"  value="ex1"  id="ex1"  title="연습문제1"   class="btn btn-danger"/>
         <!-- ex1  -->	
 
+        <script>
+          // 이벤트대상                  이벤트     이벤트핸들러
+          document.getElementById("ex1").onclick = function(){
+            alert("홍길동");
+          }
+        </script>
         <pre class="alert alert-warning my-3">
           1. getElementById 이용하여 ex2 선택
           2. ex2버튼클릭시 ex2의 글자사이즈를 25px로 배경색상을 blue로 변경
         </pre>
         <input type="button"  value="ex2"  id="ex2"  title="연습문제2"   class="btn btn-danger"/>
         <!-- ex2  -->	
-    
+        <script>
+          document.getElementById("ex2").onmouseenter = function(){  // 마우스 올릴때
+            document.getElementById("ex2").style.fontSize="25px";
+            document.getElementById("ex2").style.background="blue";
+          };
+          document.getElementById("ex2").onmouseleave = function(){    // 마우스 뗄때
+            document.getElementById("ex2").style.fontSize="25px";
+            document.getElementById("ex2").style.background="blue";
+          };
+        </script>
 
         <pre class="alert alert-warning my-3">
           1. getElementById 이용하여 ex3 선택
@@ -38,6 +53,12 @@
         </pre>
         <input type="button"  value="ex3"  id="ex3"  title="연습문제3"   class="btn btn-danger"/>
         <!-- ex3  -->	
+        <script>
+          document.getElementById("ex3").onclick = function(){
+            document.getElementById("ex3").style.letterSpacing="5px";
+            documnet.getElementById("ex3").style.backgroundcolor="black";
+          };
+        </script>
 
         <pre class="alert alert-warning my-3">
           1. getElementById 이용하여 ex4 선택
@@ -46,12 +67,26 @@
         <input type="button"  value="ex4"  id="ex4"  title="연습문제4"   class="btn btn-danger"/>
         <!-- ex4  -->	
 
+        <script>
+          document.getElementById("ex4").onclick = function(){
+            document.getElementById("ex4").style.textDecoration="underline";
+            document.getElementById("ex4").style.fontStyle="italic";
+            document.getElementById("ex4").style.fontWeight="bold";
+          }
+        </script>
         <pre class="alert alert-warning my-3">
           1. getElementById 이용하여 ex5 선택
           2. ex5버튼클릭시 ex5의  배경색 black, 글자색 white, 글자사이즈 25px
         </pre>
         <input type="button"  value="ex5"  id="ex5"  title="연습문제5"   class="btn btn-danger"/>
         <!-- ex5  -->	
+         <script>
+          document.getElementById("ex5").onclick = function(){
+            document.getElementById("ex5").style.backgroundcolor="#000";
+            document.getElementById("ex5").style.color="#fff";
+            document.getElementById("ex5").style.fontSize="25px";
+          };
+         </script>
      </div>
 
 

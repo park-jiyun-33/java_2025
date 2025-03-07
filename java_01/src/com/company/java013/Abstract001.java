@@ -9,6 +9,7 @@ package com.company.java013;
 	Cat   Dog
 */
 
+
 abstract class Animal{ // 일반클래스 + 설계
 	String name; int age;
 	abstract void eat();   // 추상메서드가 있으면 반드시 추상클래스로 만들어줘야함.

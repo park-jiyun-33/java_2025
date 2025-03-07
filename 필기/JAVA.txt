@@ -1,0 +1,644 @@
+-------------------------------------------------------------------------------
+part1) control ★
+   - 변수 / 자료형 / 제어문 ( if/switch/ for, while, do while ) / array / method
+-------------------------------------------------------------------------------
+■1.  java?
+1) java?
+- 프로그래밍 언어  
+- 사람이 작성한 코드를 컴퓨터가 이해할수 있는 명령을 작성하는 도구
+- 정부나 기업의 si (시스템 통합프로젝트) 가 대부분 자바로 구현
+- jvm (java virtual machine)
+  운영체제와 하드웨어에 관계없이 실행
+- OOP
+
+■2. OOP 특징
+- object  oriented programming
+- 부품객체(class)를 조립해서 만들어가는 프로그래밍 기법
+
+
+part1) control ★
+   - 변수 / 자료형 / 제어문 ( if/switch/ for, while, do while ) / array / method
+part2) oop 특징 ★ 면접문제
+   - class / static, final , modifier  /  상속 / abstract,interface / 예외처리
+part3) oop 활용  .... 챗GPT
+   - collection ( ArrayList ) ,  Thread , lambda + Stream ( method 많이 사용) / io / network
+
+
+
+■3. 설치  (1)   java
+1) java.sun.com 다운로드받아서 설치
+  -    JDK 17.0.14
+  -    jdk-17.0.14_windows-x64_bin.exe
+
+2) java path 설정
+JAVA_HOME :   C:\Program Files\Java\jdk-17
+path            :   %JAVA_HOME%\bin
+
+> [내컴퓨터] - 오른쪽마우스 - 속성 - [고급시스템설정]-[고급] - [환경변수설정]
+> 시스템변수 - [새로만들기] 
+
+3) java 설치확인
+[검색]   cmd   
+----------------------------
+java  -version     
+----------------------------
+ 
+
+
+■4. 설치  (2)   eclipse
+1) eclipse.org  -  다운로드 -  java EE
+2) 작업환경 ( workspace)  -  D:\java_2025
+*  [window] - [perspective] - java
+*  [window] - [preferences] - [검색 : enc]
+
+
+■5.  프로그램 작성 ( 프로그램 동작 )
+1) 소스파일(개발자) -  컴파일(번역)  - 바이트코드(컴퓨터)
+     .java                                            .class
+    
+  A001.java       -- javac  A001.java --     A001.class
+
+
+* 자바프로젝트 : File -new - java project
+       ■프로젝트이름 /  ■JRE - JavaSE-17
+
+*    패키지 : 프로젝트- src - 오른쪽마우스 - new- package
+       com.회사명.프로젝트명.작업단위
+       예) com.company.java001
+
+*       자바파일(부품객체) : 패키지 - 오른쪽마우스 - new- class
+      -  클래스명 대문자
+ctrl +   (화면크게)  / ctrl -  (화면작게)   
+한줄 : ctrl + alt + j
+
+--------------------------------
+package com.company.java001;
+
+public class A001 {
+	public static void main(String [] args) {
+		System.out.println("Hello");
+	} // end main
+} // end class
+
+
+//  한줄 주석(설명글)
+/*  ctrl +   (화면크게)  / ctrl -  (화면작게)
+
+3번째줄 : public class A001{   
+     public   아무데서나 접근가능 / class    부품객체  / A001     클래스이름 
+4번째줄 : jvm 구동시작점 
+     public static void main(String [] args){}
+     public   아무데서나 접근가능 /  static 메모리상사용가능 / void main(String [] arg) 전원버튼이름  
+5번째줄 : System.out.println("Hello");
+     System (운영체제)  out( cmd ) println( 출력)
+     
+  ctrl + f11 ( 실행 )     
+ 
+
+
+■6.  git연결
+1)  폴더만들기  - D:\java_2025
+2)  source tree
+
+..... 숙제 .....
+..... 집에 컴퓨터 >> java, eclipse, git, sourcetree  - 설치 ( 이번 주까지  ~25.02.21 )
+ 
+
+
+>> part1) control ★
+   - 변수 / 자료형 / 제어문 ( if/switch/ for, while, do while ) / array / method
+part2) oop 특징 ★ 면접문제
+   - class / static, final , modifier  /  상속 / abstract,interface / 예외처리
+part3) oop 활용
+   - collection ( ArrayList ) ,  Thread , lambda + Stream / io / network
+
+■7. 출력 (1)   println, print, printf
+ 1)  System.out.println("문자열-하고싶은말");  // \n줄바꿈
+ 2)  System.out.print("문자열-하고싶은말");   //줄바꿈처리안됨
+ 3)  System.out.printf("내나이%d ,  내이름%s , 좋아하는 숫자  파이 %f" , 10 , "ab" , 1.23 );
+     %d 숫자정수 : 10,20,30  ( 소수점 안붙음)
+     %s  문자열   :  "abc"
+     %f 숫자실수 :  1.23 , 1.5, 3.14
+     
+   System.out.println("A");   
+   System.out.println("AB");   
+   System.out.println("ABC");   
+
+   System.out.println("A\nAB\nABC");   
+
+■7. 출력 (2)   + 의미 , ()
+System.out.println( 1+ 2 );    //3
+System.out.println( 1+ 2 + "+" + 3 +4);  // 3 + 34    ?
+System.out.println( "" + 1+ 2);  // 12
+
+1)            +    연산(더하기)
+2)     숫자 +   숫자        - 더하기연산
+3)     숫자 +   문자열 ,   문자열 + 숫자   - 출력
+ 
+
+■8. 변수
+1. 값?
+- 토큰 : 특정의미를 가진문자
+- 리터럴, 키워드, 식별자, 연산자,구분자
+
+  System.out.println("hello");
+
+2. 값의 보관
+- 값의 보관 == 메모리확보
+- 변수 : 변하는 수 (오픈박스) ,  한개의 값
+- 상수 : 변하지 않는(상) 수  (밀봉박스)
+- 변수이름규칙 :   $_소문자7
+
+3. 변수사용법
+   자료형  변수명   
+
+   int       a;         -       int  정수 1,2,3             a[ ]
+   double b;         - double  실수 1.23              b[ ]
+   
+   a=10;                                                      a[10]
+   a=20;                                                      a[20]
+
+※ 상수    final   int    JAVA_HOME ;   - 수정못해!
+
+
+■9. 자료형 (1)
+1) 자료형의 구분
+ - 기본형 :  실제값 저장
+ - 참조형 :  주소값 저장 ( String )
+
+2) 기본자료형
+ 논리형 - boolean    true/false
+ 정수형 - byte(1byte)- short(2byte) - int(4byte)★ - long(8byte)
+                                                                      long l = 4L;
+ 실수형 - float(4byte) -    double(8byte)★ (4-8)
+             float  f = 3.14f;  double d =3.14;                 
+
+★ 자바기본처리단위
+★ 정수  < 실수     float f = 1L;
+
+
+■10. 자료형 (2) 형변환
+1.  기본형
+1)  논리형 - boolean : true/false
+2)  정수형 - byte(1)  - short(2) - int(4) ★ - long(8: 1L)
+3)                                                실수형 - float(4: 3.14f) - double(8) ★
+
+2. 형변환
+1) 데이터 타입을 다른타입으로 변환하는 것
+2) boolean 빼고 변환가능
+3) 자동타입변환(작은타입은 큰타입으로 자동변환) / 강제타입변환
+- (float) , (int)
+4) 자동타입변환
+- byte by=1;      by             [  ]
+  int   in =0;       in[    |   |   |   ]
+  in       = by;
+5) 강제타입
+  int   in =0;       in[    |   |   |   ]
+- byte by=1;      by             [  ]
+  by      = in;     ※ error
+- 해결방안)  by      = (byte)in;
+
+
+3. char
+1) 유니코드 - 2byte
+char  ch1 = ' ';
+char  ch2 = '\u0000';    - 유니코드\u
+
+2)  저장시 숫자로 출력 문자로 
+3)  문자열에서 문자처리
+
+
+※ 자바자료형 범위 찾아보기
+
+■11. 연산자
+1.  연산?
+1)  데이터를 처리해서 결과값을 산출하는 과정
+
+2.  종류
+먼저  값을구하고                   비교                         조건처리후        대입
+( )     +,-,*,/,%(나머지)          <, >, <=, >=, == , !=     && ,||, ?:         = ,+=
+
+3. 필수조건
+q1-1 int형 변수 x가 3보다 크고 10보다 작을때 true인 조건식 
+q1-2 char형 변수 ch가 'a' 또는 'A'일때   true인 조건식    
+q1-3 char형 변수 ch가 숫자('0'~'9')일때   true인 조건식     
+q1-4 char형 변수 ch가 영문자(대문자 또는 소문자) 일때   true인 조건식
+
+
+■12. 조건문  (1)
+1. 프로그램 코드 실행흐름
+  - 위 → 아래, 왼쪽 → 오른쪽
+  - 제어문은 개발자가 원하는 방향으로 변경할수 있도록 도와줌.
+
+2. 제어문의 종류
+    조건문      : if , switch  #
+    반복문      : for, while, do while
+    제어키워드 : break# , continue
+
+
+■13. 조건문  (2)
+1. 프로그램 코드 실행흐름
+  - 위 → 아래, 왼쪽 → 오른쪽
+  - 제어문은 개발자가 원하는 방향으로 변경할수 있도록 도와줌.
+
+2. 제어문의 종류
+    조건문      : if , switch  
+    반복문      : for# , while # , do while #
+    제어키워드 : break , continue
+
+
+1) for( 초기문; 조건문; 증감문  ){  반복해야할 내용  }    -  반복횟수를 알고 있을때
+2) while( 조건문 ){    반복해야할 내용 }  - 반복횟수 모를때   예)게시판
+   
+   초기문; 
+   while( 조건문  ){  반복해야할 내용        증감문; } 
+
+3) do{  반복해야할 내용  }while( 조건문  ); - 무조건 1번은 실행
+
+   초기문; 
+   do{  반복해야할 내용        증감문; }while( 조건문  ); 
+
+4) 무한반복
+for(;;){
+   // 빠져나올조건
+}
+
+
+5) break/continue
+1. for - break
+// 1 2  - 3뒤로 없어짐! break           
+for(int i=1; i<=10; i++) {
+  if(i==3) {break;}
+  System.out.print(i + "\t");
+}
+
+// for - continue - skip
+// 1 2 (3) 4 5 6 7 8 9 10
+for(int i=1; i<=10; i++) {
+   if(i==3) {continue;}
+   System.out.print(i + "\t");
+}
+
+
+■14. array 배열
+1. 배열?
+- [같은 타입]의 데이터를 [연속된 공간에 저장]하는 자료구조
+- 각 데이터의 저장위치 [인덱스]를 통해서 접근
+
+int  a     = 10;  // 비교
+
+int[]  arr =  {  1,2,3 };
+-----------------------------------------------------
+[heap-동적데이터]              [stack-임시데이터] 
+1번지{ 1,       2,       3}  ←  arr : 1번지
+    arr[0]  arr[1]  arr[2]
+-----------------------------------------------------
+
+ 
+
+■15. method (1)
+1.   method?
+-  코드 재사용
+-  실행하고자 하는 명령어들을 {} 안에 한꺼번에 모아놓고
+-  메서드이름이 호출되면 실행되는 기능
+-  function, method, 멤버함수
+
+2. method 사용법
+Step1)  함수정의
+Step2)  함수호출
+
+
+■16. method (2)
+1. 오버로딩
+- 메서드들을 [같은이름]으로 같게
+- 파라미터 [타입]과 [갯수]로 구분
+- public, static, 리턴값은 오버로딩에 영향을 미치지 않음!
+
+※ 참고사항 - 오버라이딩
+- 상속시 자식클래스에서 맞게 메서드를 수정
+
+
+2.  call by value  vs   call by reference
+- call by value        :  전달받은 값을 복사해서 처리 / 원본값은 변경되지 않음.
+   
+    void show(int a){  System.out.println(a*10);  }
+           show(   1 );    //10
+
+- call by reference  :  전달받은 주소를 직접 참조해서 처리 / 원본값은 변경됨.
+
+    int [] a = {1,2,3};
+    void show(int [] a){   a[0]*=10;  }
+               show(   a );    
+
+    System.out.println(  a[0]   );  //10
+
+
+-------------------------------------------------------------------------------
+part2) oop 특징 ★ 면접문제
+   - class / static, final , modifier  /  상속 / abstract,interface / 예외처리
+-------------------------------------------------------------------------------
+
+● 1. CLASS?
+1. 자바 저장단위
+- 변수  < 배열 < 클래스
+
+2. 클래스 (CLASS)
+- 객체의 특징  예) 자동차
+- 부품객체
+- 상태(멤버변수) 와                 행위(멤버함수)를 갖는다 
+   예) 바퀴클래스, 엔진클래스 + 드라이브, 후진,파킹
+
+3. OOP?  ★
+-     객체             지향     프로그래밍
+- Object         Oriented Programming
+-     틀                 기반      프로그램
+- 부품객체(클래스)  조립    완성된 프로그램을 만드는 기법  ★
+
+4. 클래스와 인스턴스
+-1. 클래스(설계도)틀로 예) 붕어빵틀
+-2.	     인스턴스화를 통해( new 실제 메모리-heap에 객체만들기)
+-3. 		       여러개의 객체(인스턴스)를 만들기	
+			  예) 객체(Object) - 붕어빵들
+			       인스턴스      - 팥붕어빵, 슈크림뿡어빵 각각,,,
+			
+> 클래스는 설계도
+> 인스턴스는  실제로만들어진객체
+
+
+● 2. 생성자
+1. 생성자
+ - new 연산자에 의해 호출 [ 초기화 ] 담당
+
+2. 기본생성자( 디폴트생성자 )
+- 모든클래스에 생성자가 반드시 존재
+- 생성자선언을 생략시 컴파일러가 자동으로 기본생성자를 추가
+- 개발자가 선언시 컴파일러가 자동생성 취소
+
+3. 생성자형식
+class A{
+   public    A(                 ){}   //기본생성자(디폴트생성자)
+   public    A(String name){}   //파라미터, 알규먼트가 있는 생성자.
+}
+1)  리턴값 없음          -   리턴값 메서드명(파라미터)
+2)  클래스명과 동일
+3)  디폴트생성자를 생성해야하는 경우 : 오버로딩 , 상속
+
+
+4.  초기화순서
+	기본값			명시적초기화		초기화블록		생성자
+	
+	4-1) 기본값      : String ,객체 - null /  int - 0 으로 초기화
+	4-2) 명시적초기화 :  int a=10;    중요콘텐츠 명시적으로 알림!    
+    4-3) 초기화블록   :  { a=10; b=20; }   여러개초기화시
+    4-4) 생성자      : 최종은 생성자에서 사용함.  인스턴스변수 초기화
+
+
+● 3. static / final 
+1. runtime data area
+method : 정보저장 , static, final
+heap   : 동적저장 - new ,  gc( garbage collecetor)가 처리소멸
+stack  : 임시값저장
+
+2. static
+- jvm 소스로딩시 메모리 할당받음
+- new연산자보다 먼저 실행되어 메모리(method 영역:runtime)에 1회 생성
+- 클래스명.변수명  / 클래스명.메서드명   - 클래스변수/클래스메서드 
+  Calc.name
+- 객체생성과 관련이 없음.
+- 인스턴스로 접근시 권장사항이 아니므로 경고발생
+
+3. final
+- 수정하지마
+- 클래스 ( 상속받지마 - extends 사용못함)
+- 멤버변수 ( 상수 )
+- 멤버함수 ( 부모메서드사용못함 - @Override 못함)
+
+
+● 4. 지정접근자
+- 클래스 및 구성요소에 대한 접근제한 역할
+		클래스내부            패키지(폴더)	하위클래스	그외
+public		O		O		O		O
+protected		O		O		O (extends)	X 
+default(package)     O                         O		X		X
+private		O		X		X		X
+
+---------------------
+class A{
+   private int a;     int b;   protected int c;   public int d;
+   A(){}
+   A(int a){  this.a=a;}   //생성자
+   void  setA(  int a ){ this.a = a;}  //셋팅해주는 메서드 
+   int    getA(){     return this.a; }  //값찾아주는메서드
+}
+---------------------
+
+
+● 5. 클래스배열
+
+  클래스[]  배열명 = new 클래스[갯수];
+  
+  String[]   arr     = new String[3];  
+  A1     []   carr   = new A1[3];  // [null, null, null ]
+  ※ null  - 공간은 있지만 값이 비어있어!
+   
+  carr[0]  = new  A1();  ※ 생성자를 불러서 인스턴스변수를 초기화해 사용가능하게만들기
+  1번지{  name="" }  ←  carr[0] 1번지
+
+● 6. 상속
+1. 상속?  클래스의 재사용 - 새로운 부분만 추가, 수정해서 사용
+
+2. super  vs  sub
+  부모           자식
+  상위           하위
+  parent        child
+  super         sub
+
+3. 모든클래스는 Object 클래스를 상속
+
+4. UML - 부모 ← 자식
+
+5. 장점 - 빠른개발, 코드의 중복성제거, 다형성(하나의 타입으로 여러타입을 관리)
+
+6. 문법
+  class  자식클래스 extends 부모클래스  (O)  단일상속
+  
+  class  자식클래스 extends 부모클래스1, 부모클래스2 (X)
+
+7. 상속시 부모속성을 사용할수 있는 이유?
+   - 부모생성자를 호출해 
+     부모의 인스턴스변수를 초기화해 사용가능하게 만들어줌.
+
+8. 오버라이드
+  - @Override
+  - 상속(extends)시  부모의 메서드와 동일한지
+
+
+● 6. 클래스 다이어그램
+1. 시스템을 구성하는  클래스들 사이관계를 표현
+2. 클래스  - 객체를 생성하는 설계도
+
+3. https://staruml.io/  - 다운로드 - 설치
+
+4. 사용법
+ - 클래스 
+   --------------------   
+   [   Animal    ]
+   --------------------  
+   Add - Attribute   ( 멤버변수 )
+   --------------------  
+   Add - Operation  ( 멤버함수)
+   --------------------  
+
+
+5. UML 관계 
+ 1) 연관관계
+ 2) 일반화관계
+ 3) 집합관계
+ 4) 의존관계
+ 5) 실체화관계 ( 인터페이스)
+
+.....................................................................................
+  1) 연관관계
+> 2) 일반화관계  ( 상속 - extends, IS-A(고양이는 동물이다) , 속이빈 화살표 )
+  2-1) 상속관계
+  2-2) IS-A 관계 - 한 클래스가 다른클래스를 포함하는 상위 개념
+    -  고양이는 동물이다 (O)  is - A 관계
+    -  사람도 동물이다    (O)  
+    -  동물은 고양이 이다(X)
+
+ 3) 집합관계
+ 4) 의존관계
+> 5) 실체화관계 ( 인터페이스 - implements, Can do this , 빈삼각형과 점선 )
+   5-1) 핑클 - 약속할게....
+   5-2) 객체가 해야할일, 할 수 있는일 - 책임 
+.....................................................................................
+
+● 7. 다형성
+1. 다형성 
+   - 많은 형상을 띄는 성품
+   - 여러타입의 객체를 하나의 타입으로 관리
+
+2. 부모는 자식을 담을 수 있다.   ( 업캐스팅 )
+-----------------------------
+<<class>> Animal    [ 이름, 나이  / 먹기, 자기 , 배변 ]
+                 ↑
+<<class>> Cat         [ 동물등록증 / 꾹꾹이 하기]
+-----------------------------
+
+Animal ani   =   new Cat();   //부모 = 자식
+
+2-1) Animal ani                       {  이름, 나이  / 먹기, 자기 , 배변 }  
+2-2)  Cat() → Animal()   → Object() 
+      {동물등록증 / 꾹꾹이 하기}+ {  이름, 나이  / 먹기, 자기 , 배변 }
+
+
+
+3. 자식은 부모를 담을 수 있다.   ( 다운캐스팅 )
+-----------------------------
+<<class>> Animal    [ 이름, 나이  / 먹기, 자기 , 배변 ]
+                 ↑
+<<class>> Cat         [ 동물등록증 / 꾹꾹이 하기]
+-----------------------------
+
+Cat cat   = new Animal();     // 자식 = 부모 ( 다운캐스팅)  동물은 고양이다 X
+
+1. Cat  cat;
+{이름, 나이  / 먹기, 자기 , 배변} + { 동물등록증 / 꾹꾹이 하기}
+
+2. new Animal();
+{이름, 나이  / 먹기, 자기 , 배변}
+
+3. 만족못시키는 범위가 생김
+{ 동물등록증 / 꾹꾹이 하기}
+
+4. 쓰는이유?
+ 부모타입으로 자식객체들 관리가능
+     Animal
+   ↑      ↑
+Cat     Person
+
+Animal[] animals = {    new Cat() ,  new Cat() ,  new Person() ,  new Person() ,  }; 
+
+
+● 8. abstract
+1. 추상화( abstract )
+- 실체화된 객체들간의 공통되는 특성을 추출한 것
+- 미완성적인 개념 ( new 사용하지 못함 )
+- 공통된 필드와 메서드의 이름을 통일할 목적
+
+2. 추상클래스 
+abstract class Animal{   // abstract class
+     String name;         // 인스턴스변수 - this
+     abstract void sound();  // abstract method   -> {}구현부 없음! :미완성적인 개념
+}
+
+class Cat extends Animal{
+   @Override void sound(){  }
+}
+2-1. Animal ani - new Animal();  X(사용불가)
+2-2. 자식클래스를 이용해서 구현해야함.
+
+
+● 9. interface
+1. interface 
+- 개발코드와 객체사이 연결
+- 개발코드 변경없이 객체를 바꿔낄 수 있는 역할
+
+2. abstract( IS A : 고양이는 동물이다 )  vs  interface( can do this )
+ - 추상화정도가 interface가 더 높다
+ 1) sbstract - 인스턴스변수, 일반메서드 추상메서드 둘다 가질 수 있으나
+ 2) interface - 상수(public static final) + 추상메서드(public abstract)만 가짐
+
+3. 프로젝트 진행시 interface 사용하면
+   다른 구성원들이 각각의 부분을 완성할때까지 기다리지않고
+   규약만 정해두고 본인부분만 작성
+
+4. interface 형식
+   
+   interface 인터페이스명{
+     상수;   // public static final 붙음!        method area
+     추상메서드;   // public abstract붙음!   {}X - this X
+  } 
+
+  class interSon implements 인터페이스명{  }  
+
+  class interSon2 extends 클래스명 implements 인터페이스명1, 인터페이스명2{  }
+  // 구현력이 없어서 다중상속가능
+
+
+● 10. 익명클래스
+1. 익명클래스
+  - 이름이 없는 객체
+  - 한번만 사용하고 버려지는 객체를 사용할 때
+  - 인터페이스 테스트, ui이벤트 처리객체 쓸때 사용
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
