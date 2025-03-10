@@ -9,6 +9,14 @@ class Score{
 	
 	public Score() { super(); }
 
+	public Score(String name, int kor, int eng, int math) {
+		super();
+		this.name = name;
+		this.kor = kor;
+		this.eng = eng;
+		this.math = math;
+	}
+
 	@Override public String toString() { return "Score [name=" + name + ", kor=" + kor + ", eng=" + eng + ", math=" + math + "]"; }
 
 	public String getName() { return name; }  
@@ -31,7 +39,7 @@ class Score{
 class SocreProcess extends Score{
 	// 멤버함수
 	public void process_avg(Score[]std) { // 평균을 구해주는 기능
-		
+		super.avg = (super.getKor() + super.getEng() + super.getMath())/3.0;
 	}
 	public void process_pass(Score[]std) { // 합격여부를 구해주는 기능
 		
