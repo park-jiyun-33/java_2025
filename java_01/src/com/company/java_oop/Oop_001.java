@@ -2,10 +2,10 @@ package com.company.java_oop;
 
 class Coffee012{
 	// 멤버변수
-	String name = "커피";
+	String name = "아메리카노";
 	int num = 1, price = 2000;
 
-	public Coffee012() { super();}
+	public Coffee012() { super();} // 1)생성자 오버로딩  2)상속
 
 	public Coffee012(String name, int num, int price) {
 		super();
@@ -27,8 +27,10 @@ class Coffee012{
 public class Oop_001 {
 	public static void main(String[] args) {
 		Coffee012 a1 = new Coffee012("카페라떼", 2, 4000);
+		// new : 메모리 빌리고 , 객체생성 Coffee("카페라떼", 2, 4000) 초기화
 		a1.show();
 		Coffee012 a2 = new Coffee012();
 		a2.show();
 	}
 }
+

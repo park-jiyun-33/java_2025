@@ -640,9 +640,13 @@ part3) oop 활용  .... 챗GPT
 	add(Z), get(X), put, 향상된 for/lterator, size, remove, contains
 
 
+◆ 2. Lambda + Stream
+1. Lambda?
+- 자바에서 함수적 프로그램밍 지원기법
+- 코드 간결하게
 
-
-
+- 함수형인터페이스
+  : 1개의 추상메서드를 갖는 인터페이스
 
 
 
