@@ -69,3 +69,13 @@
 2. Stream
 3. Java IO
 4. Bank 배열버전 업그레이드
+
+#### 18. 202503013
+1. javaIO(byte/char)
+2. Network
+   - #1. URL
+   - #2. 연결객체:HttpURLConnection
+   - #3. 요청설정 /
+   - #4. 응답코드:200
+   - #5. 응답데이터
+   - [네이버개발자센터]_(https://developers.naver.com/docs/serviceapi/search/blog/blog.md#%EB%B8%94%EB%A1%9C%EA%B7%B8)
