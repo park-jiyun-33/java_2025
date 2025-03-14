@@ -1,4 +1,4 @@
-package com.company009_ex;
+package com.company.java009_ex;
 
 // 1. 클래스는 부품객체
 // 2. 클래스는 상태와 행위
