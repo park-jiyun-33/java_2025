@@ -83,3 +83,4 @@
 #### 19. 202503014
 1. Thread(Runnable, interrupt, synchronized)
 2. Network(채팅창-데이터주고받기)
+3. mysql 세팅
