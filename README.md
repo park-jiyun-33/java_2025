@@ -79,3 +79,7 @@
    - #4. 응답코드:200
    - #5. 응답데이터
    - [네이버개발자센터](https://developers.naver.com/docs/serviceapi/search/blog/blog.md#%EB%B8%94%EB%A1%9C%EA%B7%B8)
+  
+#### 19. 202503014
+1. Thread(Runnable, interrupt, synchronized)
+2. Network(채팅창-데이터주고받기)
