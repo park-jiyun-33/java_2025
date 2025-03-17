@@ -84,3 +84,7 @@
 1. Thread(Runnable, interrupt, synchronized)
 2. Network(채팅창-데이터주고받기)
 3. mysql 세팅
+
+#### 20. 202503017
+1. mysql(DMAS / RDB)
+2. jsp (WS / WAS / Tomcat)
