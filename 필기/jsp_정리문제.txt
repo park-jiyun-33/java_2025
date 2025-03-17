@@ -1,0 +1,9 @@
+Q1. 클라이언트 ↔ 서버 ?
+	클라이언트 : 서버스 이용( 요청 -> request )
+	서버          : 서비스 제공( 응답 -> response)
+
+Q2. WS와 WAS ?
+	web server  : 정적서버 ( apache )
+	was server  : 동적서버 ( apache + tomcat )
+
+Q3. FORM 태그 - 처리컨테이너( action )  /  처리방식( method )  / 데이터넘길때 보관이름( name )
