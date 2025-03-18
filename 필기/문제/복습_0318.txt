@@ -1,0 +1,74 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>JAVA
+Q1. 생성자
+1. 역할? ( 초기화담당 )
+2. [클래스 생성]할때 제일먼저 실행되는 특수한형태의 메서드
+3. 생성자는 리턴값이 ( 없다 )
+4. 클래스명과 이름이 ( 동일하다 )
+
+Q2. 기본생성자를 반드시 선언해야하는 경우
+( 생성자 오버로딩 / 상속 )
+
+Q3. 생성자 초기화 순서를 적으시오.
+기본값 > 명시적초기화 > 초기화 블록 > 생성자
+
+Q4. 다음파일을 확인하고 클래스변수, 인스턴스변수, 지역변수를 구분하시오.
+오류가 나면 오류나는 이유를 적으시오.
+---------------------------------------------------------------------
+class A{
+	int a; // 인스턴스변수 - heap - new O - this 각각
+	static String company;  // 클래스변수 - method - new X - 공유 A.company
+
+	void method(){ int a = 0; System.out.println(a);  } // 지역변수 - stack 
+	static void show(){ System.out.println(this.a); }  // static : 인스턴스 사용 불가
+
+	public A(){  }
+	public A( int a ){ this.a = 0; }
+}
+---------------------------------------------------------------------
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>MYSQL
+Q1. userinfo 테이블의 구조는 다음과 같다
+
+- 5, fifith, 555 데이터를 추가하시오.
+	1) insert into userinfo                  values(5, 'fifth', 555);
+	2) insert into userinfo (name, age) values('fifth', 555);
+
+Q2. no가 5번인 데이터의 age를 55로 변경하시오.
+	update userinfo  set age=55  where no = 5;
+
+Q3. no가 5번이고 name이 fifth인 데이터를 삭제하시오.
+	delete from userinfo where no = 5 and name = 'fifth';
+
+Q4. userinfo 데이터를 출력하시오.
+	select * from userinfo;
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>JSP
+Q1. 클라이언트의 파일이다
+전송버튼을 눌렀을때 jsp007_result.jsp파일에서 빠진 코드를 작성하시오.
+
+<form action = "jsp007_result.jsp" method = "get">
+	<div class = "my-3">
+		<label for="query" class = "form-label"> 검색어 </label>
+		<input type = "text" class = "form-control" id="query" name="para" />
+		
+		<button type = "submit" class = "btn btn-danger"> submit</button>
+	</div>
+</form>
+---------------------------------------------------
+<div class = "container card my -5">
+	<h3 class = "card-header"> MY 검색어 </h3>
+	<%
+		String seaech = request.getParameter("para");
+	%>
+	<p> 검색어 : <%=search></p>
+	<p><a href="javascript.history.go(-1)" class="btn btn-danger">BACK</a></p>
+</div>
+
+Q2. 
+1) 드라이버로드 ( Class.forName("com.musql.cj.jdbc.Driver") )
+2) DB연동         ( Connection conn = DriverManager.getConnection( 
+				"jdbc:mysql://localhost:3306/mdasic", "root" "1234" ) )
+
