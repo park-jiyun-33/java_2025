@@ -1,3 +1,7 @@
+#### 22. 202503018
+1. mysql( insert/update/delete)
+2. jsp()
+
 #### 20. 202503017
 1. mysql(DMAS / RDB)
 2. jsp (WS / WAS / Tomcat)
