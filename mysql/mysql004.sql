@@ -225,7 +225,7 @@ desc milk_order;
 
 -- Q1. milk_order 값 삽입
 insert into milk_order (oname, onum, oip) values('white', 2, '127.0.0.1');
-
+desc milk_order;
 -- Q2. milk_order no가 1인 데이터 조회
 select * from milk_order where ono = 1;
 

@@ -145,20 +145,28 @@
 	       		method = "방식"   데이터 노출안됨 (post)
 	       		name 			 oname, onum
 	       		-->
-	        <form action="milk_insert.jsp" method ="post">
+	        <form action="milk_insert.jsp" method ="post" onsubmit="return form()" >
 			  <div class="mb-3 mt-3">
 			    <label for="text" class="form-label">주문할 우유이름</label>
-			    <input type="text" class="form-control" id="email" 
+			    <input type="text" class="form-control" id="oname" 
 			    placeholder="주문할 우유 이름을 적어주세요!" name="oname">
 			  </div>
 			  <div class="mb-3">
 			    <label for="number" class="form-label">주문할 우유 갯수</label>
-			    <input type="number" class="form-control" id="pwd" 
+			    <input type="number" class="form-control" id="onum" 
 			    placeholder="우유갯수를 적어주세요!" name="onum" min="1">
 			  </div>
-			  <button type="submit" class="btn btn-secondary">주문하기</button>
+			  <button type="submit" value="전송" class="btn btn-secondary">주문하기</button>
 			</form>
-	        
+	        <script>
+	        function form(){
+	        	let oname = document.querySelector("#oname");
+	        	let onum = document.querySelector("#onum");
+	        	
+	        	if(oname.value == ""){alert("빈칸입니다."); oname.focus(); return false;}
+	        	if(onum.value == ""){alert("빈칸입니다."); onum.focus(); return false;}
+	        }
+	        </script>
 	       <!--  -->
 	       <!--  -->
 	      </div>
@@ -199,7 +207,7 @@
 			  </div>
 			  <button type="submit" class="btn btn-secondary">주문 수정하기</button>
 			</form>
-	        
+			
 	       <!--  -->
 	       <!--  -->
 	      </div>
