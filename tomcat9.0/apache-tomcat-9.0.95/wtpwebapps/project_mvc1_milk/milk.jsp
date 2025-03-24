@@ -12,11 +12,11 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<body>
 <div class="mt-4 p-5 bg-info text-white">
   <h1>MILK ORDER project</h1>
   <p>preparedStatement Ex</p>
 </div> <!-- bg-  primary(파랑)  danger(빨강)  warning(노랑)  dark(블랙)  info(하늘색)  secondary(회색) -->
-<body>
 <!-- 메뉴판 -->
 <!-- 메뉴판 -->
 	<div class ="container card my-5">
@@ -147,12 +147,12 @@
 	       		-->
 	        <form action="milk_insert.jsp" method ="post" onsubmit="return form()" >
 			  <div class="mb-3 mt-3">
-			    <label for="text" class="form-label">주문할 우유이름</label>
+			    <label for="oname" class="form-label">주문할 우유이름</label>
 			    <input type="text" class="form-control" id="oname" 
 			    placeholder="주문할 우유 이름을 적어주세요!" name="oname">
 			  </div>
 			  <div class="mb-3">
-			    <label for="number" class="form-label">주문할 우유 갯수</label>
+			    <label for="onum" class="form-label">주문할 우유 갯수</label>
 			    <input type="number" class="form-control" id="onum" 
 			    placeholder="우유갯수를 적어주세요!" name="onum" min="1">
 			  </div>
@@ -160,8 +160,8 @@
 			</form>
 	        <script>
 	        function form(){
-	        	let oname = document.querySelector("#oname");
-	        	let onum = document.querySelector("#onum");
+	        	let oname1 = document.querySelector("#oname");
+	        	let onum1 = document.querySelector("#onum");
 	        	
 	        	if(oname.value == ""){alert("빈칸입니다."); oname.focus(); return false;}
 	        	if(onum.value == ""){alert("빈칸입니다."); onum.focus(); return false;}
@@ -189,7 +189,7 @@
 	       		method = "방식"  데이터 노출안됨(post)
 	       		name 			ono, oname, onum  number, text, number
 	       	-->
-	        <form action="milk_update.jsp" method="post">
+	        <form action="milk_update.jsp" method="post" onsubmit="return form2()">
 			  <div class="mb-3 mt-3">
 			    <label for="ono_update" class="form-label">수정 주문번호</label>
 			    <input type="number" class="form-control" id="ono_update" 
@@ -202,12 +202,22 @@
 			  </div>
 			   <div class="mb-3">
 			    <label for="onum_update" class="form-label">수정 우유갯수</label>
-			    <input type="number" class="form-control" id="oname_update" 
+			    <input type="number" class="form-control" id="onum_update" 
 			    placeholder="우유갯수를 입력해주세요!" name="onum">
 			  </div>
 			  <button type="submit" class="btn btn-secondary">주문 수정하기</button>
 			</form>
-			
+			 <script>
+	        function form2(){
+	        	let ono = document.querySelector("#ono_update");
+	        	let oname = document.querySelector("#oname_update");
+	        	let onum = document.querySelector("#onum_update");
+	        	
+	        	if(ono.value == ""){alert("빈칸입니다."); ono.focus(); return false;}
+	        	if(oname.value == ""){alert("빈칸입니다."); oname.focus(); return false;}
+	        	if(onum.value == ""){alert("빈칸입니다."); onum.focus(); return false;}
+	        }
+	        </script>
 	       <!--  -->
 	       <!--  -->
 	      </div>
@@ -230,7 +240,7 @@
 	       		method = "방식"  데이터 노출됨 (get)
 	       		name 			ono				   number
 	       	-->
-	        <form action="milk_delete.jsp" method ="get">
+	        <form action="milk_delete.jsp" method ="get" onsubmit="return form3()">
 			  <div class="mb-3 mt-3">
 			    <label for="ono_delete" class="form-label">취소 주문번호</label>
 			    <input type="number" class="form-control" id="ono_delete" 
@@ -238,7 +248,12 @@
 			  </div>
 			  <button type="submit" class="btn btn-secondary">주문 취소하기</button>
 			</form>
-	        
+	        <script>
+	        function form3(){
+	        	let ono = document.querySelector("#ono_delete");
+	        	if(ono.value == ""){alert("빈칸입니다."); ono.focus(); return false;}
+	        }
+	        </script>
 	       <!--  -->
 	       <!--  -->
 	      </div>
