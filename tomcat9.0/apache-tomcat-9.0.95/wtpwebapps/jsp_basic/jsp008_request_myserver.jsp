@@ -38,6 +38,7 @@
 		<div class = "my-3">	
 			<input type ="submit"  title="login 하러가기"
 				   class="btn btn-danger" id="check" name="remember"/>
+				   
 		</div>
 		</form>
 		
