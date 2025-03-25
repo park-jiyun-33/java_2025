@@ -1,6 +1,6 @@
 #### 26. 202503024
 1. mysql( join )
-2. jsp ( 내장객체 - )
+2. jsp ( 내장객체 - request(요청), response(응답), session(정보저장), out(출력) )
 
 #### 25. 202503021
 
