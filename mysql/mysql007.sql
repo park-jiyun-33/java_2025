@@ -144,6 +144,8 @@ desc member;
 insert into member values(1, 'first', 11);
 insert into member values(2, 'second', 22);
 insert into member values(3, 'third', 33);
+
+delete from member where no=7;
 select * from member;
 
 

@@ -5,7 +5,7 @@
 <!-- my.jsp --> 
 
 <!-- header.jsp --> 
-<%@ include  file="jsp022_header.jsp" %> 
+<%@ include  file="jsp025_header.jsp" %> 
 <!-- header.jsp --> 
 
 	<div class ="container card my-5">
@@ -24,5 +24,5 @@
 <!-- my.jsp --> 
 	
 <!-- footer.jsp -->	
-<%@ include  file="jsp022_footer.jsp"%>
+<%@ include  file="jsp025_footer.jsp"%>
 <!-- footer.jsp -->
