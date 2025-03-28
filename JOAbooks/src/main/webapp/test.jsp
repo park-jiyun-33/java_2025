@@ -43,8 +43,8 @@
 		<%
 		BoardDao dao = new BoardDao();
 		//6. delete
-		System.out.println(dao.delete(1)); //1
-		System.out.println(dao.select(1));
+		//System.out.println(dao.delete(1)); //1
+		//System.out.println(dao.select(1));
 		
 		//5. update
 		/*
@@ -63,16 +63,16 @@
 		//System.out.println(dao.select(1)); // 있는번호!
 		
 		//2. insert( BoardVO vo ) - btitle, bcontent, bname
-		/*
-		BoardVO vo = new BoardVO();
+		
+		/* BoardVO vo = new BoardVO();
 		vo.setBtitle("제목");
 		vo.setBcontent("내용");
 		vo.setBname("first");
 		System.out.println( dao.insert(vo) ); //1
 		
 		//1. selectAll
-		System.out.println( dao.selectAll() );
-		*/
+		System.out.println( dao.selectAll() ); */
+		
 		
 		%>
 	</div>  

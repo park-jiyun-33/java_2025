@@ -198,6 +198,75 @@ Dao           : [com.company.dao]      - BoardDao
 
 Test 
 
+......................................................................................................................................
+1. 
+[com.company.controller] - [FrontController]   *.do
+
+[클라이언트 요청]   
+↓
+index.jsp  ->  *.do   [FrontController]
+       ㄴ  /list.do           - C:전체리스트        BList        /      V:list.jsp 
+       ㄴ  /write_view.do - C:X                                          V:write.jsp 
+       ㄴ  /write.do        - C:글삽입             BWrite(알림창- 성공/실패) /   V: /list.do
+       ㄴ  /detail.do      - C:해당번호 상세보기  BDetail(조회수올리기/해당글상세)
+                                      V:detail.jsp
+       ㄴ  /edit_view.do  - C:해당번호 글수정폼  BEditView(해당글상세)
+                                      V:edit.jsp
+       ㄴ  /edit.do       - C:해당번호 글수정기능 BEdit(해당글수정)
+                                      V: /detail.do 
+       ㄴ  /delete.do     - C:해당번호 글삭제기능 BDelete(해당글삭제)      V: /list.do
+......................................................................................................................................
+2. Service
+    [com.company.service]
+
+        <<interface>> BoardService   - exec(request, response)   
+   ↑             ↑            ↑            ↑            ↑           ↑  
+   BList   BWrite        BDetail     BEditView     BEdit       BDelete   
+
+>   BList     전체리스트   -  dao.list()
+>   BWrite    글삽입       -  dao.insert(dto)  / 알림창- 성공/실패
+>   BDetail   상세보기     -  dao.updateHit(dto) , dao.detail(dto)
+>   BEditView 글수정폼   -  dao.detail(dto)
+>   BEdit     글수정        -  dao.update(dto)  / 알림창- 성공/실패
+>   BDelete   해당글삭제-  dao.delete(dto)  / 알림창- 성공/실패
+......................................................................................................................................
+
+http://localhost:8080/JOAbooks/list.do
+
+
+■PART005 필요기능
+1. el/jstl
+> el  
+   - 표현식(출력)
+   - before : <%= %>
+   - after : ${ }
+>jstl ( JavaServer page Standard Tag Library )
+  - 자바코드 대신 태그로 웹페이지작성
+  - before : <%= if() %>
+  - after : <c:if test=></c:if> / <c:forEach items="" var=""></c:forEach>
+
+2. admin만 글쓰기 ( session 정리 )
+3. Naver api
+	[com.company.util] - NaverBook.java
+
+4. ajax
+
+-1.  반복문, 조건문 등의 기본구현
+-2.  사용법
+ 1. http://jakarta.apache.org/
+ 2. 왼쪽메뉴 :  Tablibs
+ 3. Standard Taglib -  다운로드 - jakarta-taglibs-standard-1.1.1.zip
+ 4. [WEB-INF]-[lib] - jstl.jar / standard.jar
+
+<%@taglib  prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
+
+-3. jstl 라이브러리
+  core : 기본적인 기능제공
+  fmt  : format 형식
+  xml  : xml관련처리
+  sql  : sql관련처리
+
+
 
 
 
