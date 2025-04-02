@@ -229,7 +229,7 @@ public class AnimalFarm2 {
 
 
 ---------------------------------
-#4. DB / MYBATIS
+#4. DB / MYBATIS (1)
 ---------------------------------
 ▶ 1. DataSource
 SimpleDriverDataSource 가장단순버전
@@ -324,8 +324,147 @@ delete  : delete from userinfo where no= ?
 7-3. Dao( UserDao, UserDaolmpl, user-mapper.xml )
 
 
+---------------------------------
+#5. DB / MYBATIS (2)
+---------------------------------
+▶ 1. mybatis (1)
+- TestDao, Impl, mapper.xml 의 파일량 줄이기
+- SqlSession sqlSession ,  namespace="com.company.dao.TestDao" 코드안에 있어서 불편, 설정파일 설정
+
+TestDao <<interface>>
+   ↑
+TestDaoImpl <<class>>
+======================
+	@Repository
+	public class TestDaoImpl implements TestDao{
+		@Autowired private SqlSession sqlSession; // sql 실행
+		private static final String namespace="com.company.dao.TestDao"; ... 코드생략
+	}
+======================
+test.mapper.xml
 
 
+▶ 2. mybatis (2)
+-root-context.xml 설정파일
+before: 구현클래스 없애고.. 안에있는 설정을
+	@Autowired private SqlSession sqlSession; // sql 실행
+	private static final String namespace="com.company.dao.TestDao"; ... 코드생략
+
+after :root-context.xml
+	<bean id="testDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+		<property name="sqlSessionTemplate" ref="sqlSession" />
+		<property name="mapperInterface"    value="com.company.dao.TestDao" />
+	</bean>
+
+1. 006_1 mybatis 프로젝트 복사
+2. 006_2 mybatis 프로젝트 복사 - Impl 구현클래스삭제 / root-context 수정
+
+
+▶ 3. mybatis (3)
+- MapperFactoryBean 매번 설정이 힘듦. 모든 mapper에 설정하기 힘듦
+
+- 해결방안 : MapperScannerConfigurer
+1. MyDao
+   public @interface MyDao{}
+   
+2. mapper로 만들어주는 interface
+   @MyDao  public interface TestDao{}
+   @MyDao  public interface UserDao{}
+   @MyDao  public interface BoardDao{}
+
+3. MyDao root-context.xml 등록
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage"     value="com.company.dao"></property>
+		<property name="annotationClass" value="com.company.dao.MyDao"></property>
+	</bean>
+
+
+---------------------------------
+#6. mvc project
+---------------------------------
+▶ 1. mvc 
+>> 서로 영향없이 쉽게 고칠 수 있는 어플리케이션을 만들자!
+Model	  - 정보 ( dto, dao, service )
+View	  - 화면 ( html, css, js/squery )
+Controller	  - 처리 ( 요청을 받아서 처리후 응답 )
+
+▶ 2. mvc1  vs  mvc2
+mvc1 - controller의 역할을 jsp 담당
+mvc2 - controller의 역할을 servlet 담당
+Frontcontroller - 공통작업수행 → 세부컨트롤러에 처리
+ 
+▶ 3. SPRING MVC
+[클라이언트]
+ ↓ ① list.do
+[FrontConteroller]
+<<DispatcherServlet>>  →  ② HandlerMapping - @Controller
+			          ↓
+		           ③ 세부 Controller  - db가 db처리
+	↓↑
+          ④ View
+	
+① 클라이언트 ( 코요테 - web.xml - root-context / servlet-context.xml / DispatcherServlet )
+② DispatcherServlet - HandlerMapping - @Controller / 처리할 Controller 확인
+③ 세부 Controller 클라이언트 요청처리 ( service - 비지니스로직 )
+④ 요청결과와 View정보를 DispatcherServlet  줌 / View를 객체를 생성해서 응답
+
+1. 실습
+1) pom.xml  spring-webmvc  등록
+
+   <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+   <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-webmvc</artifactId>
+       <version>3.2.17.RELEASE</version>
+   </dependency>
+
+2) web.xml  ContextLoaderListener (스프링구동) / DispatcherServlet (FrontConteroller)
+		root-context (db설정) / servlet-context.xml (view servlet 설정)
+3) config / servlet-context.xml
+
+
+
+2. 실습
+1) pom.xml  spring-webmvc  등록
+
+   <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+   <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-webmvc</artifactId>
+       <version>3.2.17.RELEASE</version>
+   </dependency>
+
+2) web.xml  ContextLoaderListener (스프링구동) / DispatcherServlet (FrontConteroller)
+		root-context (db설정) / servlet-context.xml (view servlet 설정)
+3) config / servlet-context.xml
+	
+4) servlet.xml
+  4-1. @Controller 위치
+	<context:component-scan base-package="com.comapny.controller" />
+  4-2. Model model (처리결과)
+	<mvc:annotation-driven/>
+  4-3. ViewPesolver
+	<bean id="viewResolver" 
+		  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+			<property name="prefix" value="/" />
+			<property name="suffix" value=".jsp" />
+	</bean>
+
+
+	
+---------------------------------
+#7. 유용한 기능들
+---------------------------------
+1. Lombok
+2.  
+3.
+4.
+
+
+---------------------------------
+#8. restful api project
+---------------------------------
+▶ 
 
 
 

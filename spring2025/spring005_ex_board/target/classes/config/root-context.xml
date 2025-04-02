@@ -11,8 +11,8 @@
 
 
 	 <!-- Step2. Mystatis
-	 	SqlSeeionFactory (관리)
-	 	SqlSeeion (Sql 실행)
+	 	SqlSessionFactory (관리)
+	 	SqlSession (Sql 실행)
 	 -->
 	 <context:component-scan base-package="com.company" />
 	 <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
