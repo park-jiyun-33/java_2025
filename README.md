@@ -1,16 +1,38 @@
+[ 이클립스 레이아웃 초기화(콘솔창 아래로 고정) :  Window > Reset Perspective ]
+
+
+#### 30. 202503028
+1. jsp ( Frontcontroller - JOABooks_board / JSTL+Ajax / naver api )
+
+#### 29. 202503027
+1. jsp ( Frontcontroller - JOABooks_board )
+
+#### 28. 202503026
+1. jsp ( DBCP , EL : ${} / JSTL : </c:if> , ERD)
+
+#### 27. 202503025
+1. mysql ( Subquery : select구문안에 select 구문)
+2. jsp ( error400/error500 ) / ( cookie )
+
 #### 26. 202503024
 1. mysql( join )
 2. jsp ( 내장객체 - request(요청), response(응답), session(정보저장), out(출력) )
 
 #### 25. 202503021
+1. mysql select( Function - Number/String/Date/If/ Case )
+2. jsp ( db연동 milk project- 우유주문시스템 + 빈칸유효성검사 )
 
 #### 24. 202503020
+1. mysql select( order by, limit, 집계함수 )
+2. jsp (db연동 - milk project- 우유주문시스템)
 
 #### 23. 202503019
+1. myslq ( select )
+2. jsp ( db연동 )
 
 #### 22. 202503018
-1. mysql( insert/update/delete)
-2. jsp()
+1. mysql CRUD( insert/update/delete)
+2. jsp(Form, db연동)
 
 #### 20. 202503017
 1. mysql(DMAS / RDB)
