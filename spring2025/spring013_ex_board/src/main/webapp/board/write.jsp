@@ -4,7 +4,7 @@
 <!--  END HEADER -->
 <div class="container"  style="margin-top:5%; min-height:500px">
 	<h3>MULTIBOARD - 글쓰기 </h3>
-		<form action="" method="post"  id="writeForm" >
+		<form action="${pageContext.request.contextPath}/board/list" method="post"  id="writeForm" >
 		   <fieldset>
 		   <legend>WRITE(CREATE)</legend>
 			<div class="form-group">

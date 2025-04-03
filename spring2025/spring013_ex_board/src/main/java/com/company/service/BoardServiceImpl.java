@@ -1,5 +1,7 @@
 package com.company.service;
 
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,11 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Autowired BoardDao dao;
 	
-	@Override public int insert(BoardDto dto) { return dao.insert(dto); }
+	@Override public int insert(BoardDto dto) { 
+		try {
+			dto.setBip(InetAddress.getLocalHost().getHostAddress());
+		} catch (UnknownHostException e) { e.printStackTrace(); }
+		return dao.insert(dto); }
 	@Override public int update(BoardDto dto) { return dao.update(dto); }
 	@Override public BoardDto updateForm(int bno) { return dao.select(bno); }
 	@Override public int delete(BoardDto dto) { return dao.delete(dto); }
