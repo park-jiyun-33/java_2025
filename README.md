@@ -1,49 +1,53 @@
 [ 이클립스 레이아웃 초기화(콘솔창 아래로 고정) :  Window > Reset Perspective ]
+#### 32. 20250401
+1. spring(jdbc , datasource)
 
+#### 31. 20250331
+1. spring (di , bean)
 
-#### 30. 202503028
+#### 30. 20250328
 1. jsp ( Frontcontroller - JOABooks_board / JSTL+Ajax / naver api )
 
-#### 29. 202503027
+#### 29. 20250327
 1. jsp ( Frontcontroller - JOABooks_board )
 
-#### 28. 202503026
+#### 28. 20250326
 1. jsp ( DBCP , EL : ${} / JSTL : </c:if> , ERD)
 
-#### 27. 202503025
+#### 27. 20250325
 1. mysql ( Subquery : select구문안에 select 구문)
 2. jsp ( error400/error500 ) / ( cookie )
 
-#### 26. 202503024
+#### 26. 20250324
 1. mysql( join )
 2. jsp ( 내장객체 - request(요청), response(응답), session(정보저장), out(출력) )
 
-#### 25. 202503021
+#### 25. 20250321
 1. mysql select( Function - Number/String/Date/If/ Case )
 2. jsp ( db연동 milk project- 우유주문시스템 + 빈칸유효성검사 )
 
-#### 24. 202503020
+#### 24. 20250320
 1. mysql select( order by, limit, 집계함수 )
 2. jsp (db연동 - milk project- 우유주문시스템)
 
-#### 23. 202503019
+#### 23. 20250319
 1. myslq ( select )
 2. jsp ( db연동 )
 
-#### 22. 202503018
+#### 22. 20250318
 1. mysql CRUD( insert/update/delete)
 2. jsp(Form, db연동)
 
-#### 20. 202503017
+#### 20. 20250317
 1. mysql(DMAS / RDB)
 2. jsp (WS / WAS / Tomcat)
 
-#### 19. 202503014
+#### 19. 20250314
 1. Thread(Runnable, interrupt, synchronized)
 2. Network(채팅창-데이터주고받기)
 3. mysql 세팅
  
-#### 18. 202503013
+#### 18. 20250313
 1. javaIO(byte/char)
 2. Network
    - #1. URL
@@ -53,17 +57,17 @@
    - #5. 응답데이터
    - [네이버개발자센터](https://developers.naver.com/docs/serviceapi/search/blog/blog.md#%EB%B8%94%EB%A1%9C%EA%B7%B8)
   
-#### 17. 202503012
+#### 17. 20250312
 1. Lambda (::)
 2. Stream
 3. Java IO
 4. Bank 배열버전 업그레이드
 
-#### 16. 202503011
+#### 16. 20250311
 1. collection Framework (Map)
 2. 익명객체, Lambda( ()->{} )
 
-#### 15. 202503010
+#### 15. 20250310
 1. collection Framework (List / Set)  
 
 #### 14. 20250307
