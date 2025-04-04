@@ -1,5 +1,6 @@
 [ 이클립스 레이아웃 초기화(콘솔창 아래로 고정) :  Window > Reset Perspective ]
 #### 35. 20250404
+1. spring(lombok / Aop / HikariCP / Tx)
 
 #### 34. 20250403
 1. spring(jstl / service)
