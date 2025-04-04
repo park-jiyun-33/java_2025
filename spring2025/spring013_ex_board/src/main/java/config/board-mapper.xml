@@ -21,6 +21,6 @@
 		select * from sboard where bno=#{bno}
 	</select>
 		<select resultType="BoardDto" id="selectAll">
-		select * from sboard order by bno desc
+		select * from sboard order by bno desc  <!-- 최신글이 항상 맨위로 -->
 	</select>
 </mapper>

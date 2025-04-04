@@ -19,10 +19,13 @@ public class BoardServiceImpl implements BoardService{
 		try {
 			dto.setBip(InetAddress.getLocalHost().getHostAddress());
 		} catch (UnknownHostException e) { e.printStackTrace(); }
-		return dao.insert(dto); }
+		return dao.insert(dto); 
+		}
+	
 	@Override public int update(BoardDto dto) { return dao.update(dto); }
 	@Override public BoardDto updateForm(int bno) { return dao.select(bno); }
 	@Override public int delete(BoardDto dto) { return dao.delete(dto); }
+	
 	@Override public BoardDto detail(int bno) { dao.updateHit(bno);  return dao.select(bno); }
 	@Override public List<BoardDto> selectAll() { return dao.selectAll(); }
 
