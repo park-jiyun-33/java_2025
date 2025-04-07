@@ -1,30 +1,40 @@
 [ 이클립스 레이아웃 초기화(콘솔창 아래로 고정) :  Window > Reset Perspective ]
-#### 36. 20250407
-1. springboot( project setting / db / view(layout) )
+#### 36. 20250407 - springboot
+1. project setting 
+2. db 연동
+3. view(layout)
 
-#### 35. 20250404
-1. spring(lombok / Aop / HikariCP / Tx)
+#### 35. 20250404 - spring
+1. lombok / Aop / HikariCP / Tx
 
-#### 34. 20250403
-1. spring(jstl / service)
+#### 34. 20250403 - spring
+1. jstl / service
 
-#### 33. 20250402
-1. spring(MapperFactoryBean / MapperScannerCingugurer / controller)
+#### 33. 20250402 - spring
+1. MapperFactoryBean 
+2. MapperScannerCingugurer 
+3. controller
 
-#### 32. 20250401
-1. spring(jdbc , datasource)
+#### 32. 20250401 - spring
+1. jdbc 
+2. datasource
 
-#### 31. 20250331
-1. spring (di , bean)
+#### 31. 20250331 - spring
+1. di 
+2. bean
 
-#### 30. 20250328
-1. jsp ( Frontcontroller - JOABooks_board / JSTL+Ajax / naver api )
+#### 30. 20250328 - jsp
+1. Frontcontroller - JOABooks_board
+2. JSTL+Ajax 
+3. naver api
 
-#### 29. 20250327
-1. jsp ( Frontcontroller - JOABooks_board )
+#### 29. 20250327 - jsp
+1. Frontcontroller - JOABooks_board
 
-#### 28. 20250326
-1. jsp ( DBCP , EL : ${} / JSTL : </c:if> , ERD)
+#### 28. 20250326 - jsp
+1. DBCP 
+2. EL : ${} / JSTL : </c:if> 
+3. ERD
 
 #### 27. 20250325
 1. mysql ( Subquery : select구문안에 select 구문)
