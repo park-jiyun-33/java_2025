@@ -1,0 +1,74 @@
+■ STEP1. project
+    - enc UTF-8
+    - project
+
+    연습) boot002 project 만들기 
+
+■ STEP2. setting (properties)
+>> before
+spring.application.name=boot001
+############################################
+##           	 boot SETTING           	        ##
+############################################
+# WebApplication
+
+# Banner  
+
+# DataSource  
+
+# Jpa  
+
+# Logging 
+
+# Thymeleaf 
+
+- dto( lombok )
+
+    연습 boot002 project 만들기
+	1) application.properteis 설정
+	   context-path=/boot2
+	   포트번호 8282
+	   application-type=  web로 설정
+	2) @Controller  @ResponseBody 설정해서
+	localhost:8282/boot2/ex1 접속시 - springboot 출력
+
+	3) @Controller 설정해서
+	RequestMapping("/ex2")  -  model 설정 test
+	localhost:8282/boot2/ex2 접속시 - model에서 설정한 - ex2 출력
+
+
+■ STEP3. db
+- jpa
+	1) application.properties
+	2) @Entity - Dto / 테이블 만들기
+	3) @Repository - Dao
+
+- ex)
+	1) @Entity 이용해서 Member 테이블만들기
+	2) @Repository 이용해서 MemberRepository 
+
+■ STEP4. view
+1. pom.xml 셋팅확인
+	<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+	</dependency>
+	<!--  https://mvnrepository.com/artifact/nz.net.ultraq.thymeleaf/thymeleaf-layout-dialect  -->
+	<!--  추가  -->
+	<dependency>
+	<groupId>nz.net.ultraq.thymeleaf</groupId>
+	<artifactId>thymeleaf-layout-dialect</artifactId>
+	</dependency>
+	<!--  추가  -->
+
+2. application.properties 설정확인
+	spring.thymeleaf.cache=false
+	spring.thymeleaf.prefix=classpath:/templates/
+	spring.thymeleaf.suffix=.html
+3. layout
+4. 화면설정
+
+■ STEP5. board
+■ STEP6. security
+
+
