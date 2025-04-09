@@ -1,4 +1,7 @@
 [ 이클립스 레이아웃 초기화(콘솔창 아래로 고정) :  Window > Reset Perspective ]
+#### 38. 20250409 - springboot
+1. security
+
 #### 37. 20250408 - springboot
 1. board - controller + view
 
