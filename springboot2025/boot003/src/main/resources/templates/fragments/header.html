@@ -23,8 +23,19 @@
 		        <a class="nav-link disabled" href="#">Disabled</a>
 		      </li>
 		    </ul>
+		    <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
+      </form>
 		  </div>
 		</nav>
+		<script>
+			let msg = "[[${msg}]]"; 
+			
+			if(msg == 'fail'){ history.go(-1);  alert('정보를 확인해주세요'); }
+			else if(msg.length != 0){ alert(msg); }
+		</script>
+		
 	</th:block>
 </body>
 </html>

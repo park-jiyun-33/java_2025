@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,6 +31,7 @@ public class BoardController {
 	} // http://localhost:8080/board/detail/1 (있는번호)
 	
 	
+	///////////////////////////////////////////////////////////////
 	@GetMapping("/board/insert")
 	public String insert_get(){ return "board/write"; } 
 	// http://localhost:8080/board/insert  (글쓰기 폼)
@@ -41,6 +43,9 @@ public class BoardController {
 		service.insert(board, member_id);  //## 글쓰기기능 
 		return "redirect:/board/list";
 	} // form 테스트  (글쓰기 기능 - 갱신된리스트)
+	///////////////////////////////////////////////////////////////
+	// @RequestParam - form, query, string, 데이터 헤더로부터 데이터 추출
+	// @PathVariable - url 경로의 변수를 추출할때 사용
 	
 	
 	@GetMapping("/board/update/{id}")
@@ -50,21 +55,28 @@ public class BoardController {
 	} // http://localhost:8080/board/update/1  (글수정 폼)
 	
 	@PostMapping("/board/update")
-	public String update_post(Board baord){
-		service.update(baord);  //## 글수정 기능 
-		return "redirect:/board/list";
+	public String update_post(Board board , RedirectAttributes rttr){
+		String msg = "fail";
+		if(service.update(board) > 0) {msg="글수정성공!";} //## 글수정 기능 
+		rttr.addFlashAttribute("msg", msg);
+		return "redirect:/board/detail/" + board.getId();
 	} // form 테스트  (글수정 기능 - 갱신된리스트)
 	
 	
-	@GetMapping("/board/delete")
-	public String delete_get(){ return "board/delete"; }
+	@GetMapping("/board/delete/{id}")
+	public String delete_get(@PathVariable Long id , Model model){ 
+		model.addAttribute("id", id);
+		return "board/delete"; 
+	}
 	// http://localhost:8080/board/delete (글삭제 폼)
 	
 	@PostMapping("/board/delete")
-	public String delete_post(Board baord){
-		service.delete(baord);  //## 글삭제 기능 
+	public String delete_post(Board baord , RedirectAttributes rttr){
+		String msg = "fail";
+		if(service.delete(baord) > 0) {msg="글삭제성공!";} //## 글삭제 기능 
+		rttr.addFlashAttribute("msg", msg); 
 		return "redirect:/board/list";
-	} // form 테스트  (글삭제 기능 - 갱신된리스트)
+	} // form 테스트  (글삭제 기능 - 갱신된리스트) 
 	
 }
 /* Restful Api

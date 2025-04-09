@@ -1,0 +1,38 @@
+숫자 정렬 :
+${list.size() - state.index}
+
+날짜 설정 :
+${#temporals.format(dto.createDate , 'yyyy-MM-dd HH:mm')}
+-----------------------------------------------------------
+
+[BoardRepository]
+
+select (기본작업) : @Query
+insert, update, delete (변경작업) : @Modifying  @Transactional  @Query
+
+#1. id와 pass가 같으면 delete 해주기
+ @Modifying     
+ @Transactional 
+ @Query("delete from Board b where b.id= :id  and  b.bpass= :bpass")
+	int deleteByIdAndBpass(@Param("id") Long id, @Param("bpass") String bpass);
+
+
+#2. id와 pass가 같으면 btitle과 bcontent 수정
+ @Modifying
+ @Transactional
+ @Query("update Board b set b.btitle= :btitle , b.bcontent= :bcontent where b.id= :id  and  b.bpass= :bpass")
+	int updateByIdAndBpass(Long id,  String bpass, String btitle, String bcontent);
+
+#3.  글검색부분은  작성자 및 글제목으로도 가능하게 [도전!]
+※ 참고)
+select  distinct b  
+from Board b  left  join   Member m  on  b.member = m
+where    b.title       like  %:key%  
+       or  b.content  like  %:key%  
+       or  m.name    like  %:key% 
+
+
+
+
+
+
