@@ -1,4 +1,9 @@
 [ 이클립스 레이아웃 초기화(콘솔창 아래로 고정) :  Window > Reset Perspective ]
+
+#### 39. 20250410 - springboot
+1. security - Role(인증/인가)
+2. 가온누리_팀프로젝트 시작(주제선정-책사이트(리뷰 or 거래))
+
 #### 38. 20250409 - springboot
 1. security
 
