@@ -1,0 +1,48 @@
+[kakao login]
+1. 카카오 개발자
+-https://developers.kakao.com
+	애플리케이션만들기 / 로그인 활성화 / 동의항목
+	rest api : 7bd013e9d8ba8cce242362158c991bee
+	redurect url : http://localhost:8080/kakao
+
+2. springboot project
+- pom.xml
+      <dependency>
+         <groupId>com.google.code.gson</groupId>
+         <artifactId>gson</artifactId>
+         <!-- <version>2.8.2</version> -->
+      </dependency>
+
+- application.properties
+	rest api : 7bd013e9d8ba8cce242362158c991bee
+	redurect url : http://localhost:8080/kakao
+
+
+3. 코드구현
+3-1. 카카오로그인
+	https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${REST_API_KEY}&redirect_uri=${REDIRECT_URI}
+
+3-2. 인가코드
+> post 
+https://kauth.kakao.com/oauth/token
+> 헤더 
+Content-Type: application/x-www-form-urlencoded;charset=utf-8
+
+> 본문
+grant_type : authorization_code
+client_id	: 
+redirect_uri :
+code	: 받은 코드
+
+
+curl -v -X POST "https://kauth.kakao.com/oauth/token" \
+    -H "Content-Type: application/x-www-form-urlencoded;charset=utf-8" \
+    -d "grant_type=authorization_code" \
+    -d "client_id=${REST_API_KEY}" \
+    --data-urlencode "redirect_uri=${REDIRECT_URI}" \
+    -d "code=${AUTHORIZE_CODE}"
+
+
+
+
+
